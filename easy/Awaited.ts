@@ -9,6 +9,7 @@ type X = Promise<string>;
 type Y = Promise<{ field: number }>;
 type Z = Promise<Promise<string | number>>;
 type Z1 = Promise<Promise<Promise<string | boolean>>>;
+// 해당 타입에 대한 문제대응은 너무 복잡해지기 때문에 일단 보류
 type T = { then: (onfulfilled: (arg: number) => any) => any };
 
 type cases = [
@@ -21,10 +22,3 @@ type cases = [
 
 // @ts-expect-error
 type error = MyAwaited<number>;
-
-/*
-조건부 타입 삼ㅏ 여
-
-
-[참고 자]
-*/
