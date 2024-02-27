@@ -1,13 +1,4 @@
 /* _____________ Your Code Here _____________ */
-
-type GetAray<T, R extends number[] = []> = R["length"] extends T
-  ? R
-  : GetAray<T, [...R, 0]>;
-
-type Add<A, B> = B extends number
-  ? [...GetAray<A>, ...GetAray<B>]["length"]
-  : never;
-
 type Includes<T extends readonly unknown[], U> = T extends [
   infer First,
   ...infer Rest
